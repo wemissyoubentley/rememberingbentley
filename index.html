@@ -1,0 +1,550 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>remembering bentley ♡</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #263d32;
+    color: #4a382b;
+}
+
+
+/* PAGE */
+
+.page {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    padding: 50px 20px 100px;
+}
+
+
+/* TITLE */
+
+h1 {
+    text-align: center;
+    margin: 0 0 80px;
+
+    font-family: Georgia, serif;
+    font-size: 44px;
+    font-weight: normal;
+
+    color: #4a382b;
+}
+
+
+/* PHOTO + PARAGRAPH AREA */
+
+.content {
+    display: flex;
+    align-items: center;
+    gap: 55px;
+}
+
+
+/* PARAGRAPH */
+
+.memory-note {
+    width: 230px;
+    flex-shrink: 0;
+
+    color: #4a382b;
+
+    font-family: cursive;
+    font-size: 17px;
+    line-height: 1.6;
+
+    text-align: left;
+}
+
+
+/* GALLERY */
+
+.gallery {
+    flex: 1;
+
+    display: grid;
+
+    grid-template-columns: repeat(6, 1fr);
+
+    gap: 70px 25px;
+
+    align-items: start;
+}
+
+
+/* POLAROID CONTAINER */
+
+.memory {
+    position: relative;
+}
+
+
+/* POLAROID SIZES */
+
+.memory.small {
+    width: 220px;
+}
+
+.memory.large {
+    width: 270px;
+}
+
+
+/* POLAROID */
+
+.polaroid {
+    width: 100%;
+
+    background: #f1e8d8;
+
+    padding: 14px 14px 55px;
+
+    box-shadow:
+        5px 8px 16px rgba(0,0,0,.30),
+        0 2px 5px rgba(0,0,0,.15);
+}
+
+
+/* PHOTO */
+
+.photo {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+
+    background: #b4a58d;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #4a382b;
+
+    font-family: cursive;
+    font-size: 23px;
+
+    overflow: hidden;
+}
+
+
+/* IMAGE */
+
+.photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* CAPTION */
+
+.caption {
+    text-align: center;
+
+    margin-top: 12px;
+
+    color: #4a382b;
+
+    font-family: cursive;
+
+    font-size: 21px;
+}
+
+
+/* TAPE */
+
+.tape {
+    position: absolute;
+
+    width: 105px;
+    height: 30px;
+
+    background: rgba(160,130,92,.75);
+
+    z-index: 10;
+}
+
+
+.tape.top {
+    top: -15px;
+    left: 50%;
+
+    transform:
+        translateX(-50%)
+        rotate(-4deg);
+}
+
+
+.tape.corner {
+    top: 12px;
+    right: -25px;
+
+    transform: rotate(45deg);
+}
+
+
+/* INDIVIDUAL POSITIONS */
+
+
+/* top row */
+
+.one {
+    grid-column: 1 / span 2;
+    transform: rotate(-6deg);
+    margin-left: 10px;
+}
+
+.two {
+    grid-column: 3 / span 2;
+    transform: rotate(4deg);
+    margin-top: 45px;
+}
+
+.three {
+    grid-column: 5 / span 2;
+    transform: rotate(6deg);
+    margin-top: 5px;
+}
+
+
+/* middle row */
+
+.four {
+    grid-column: 1 / span 2;
+    transform: rotate(3deg);
+    margin-top: 35px;
+}
+
+.five {
+    grid-column: 3 / span 2;
+    transform: rotate(-5deg);
+    margin-top: 5px;
+}
+
+.six {
+    grid-column: 5 / span 2;
+    transform: rotate(4deg);
+    margin-top: 55px;
+}
+
+
+/* bottom row */
+
+.seven {
+    grid-column: 2 / span 2;
+    transform: rotate(-4deg);
+    margin-top: 20px;
+}
+
+.eight {
+    grid-column: 4 / span 2;
+    transform: rotate(5deg);
+    margin-top: 60px;
+}
+
+
+/* BOTTOM MESSAGE */
+
+footer {
+    text-align: center;
+
+    margin-top: 100px;
+
+    font-family: cursive;
+    font-size: 30px;
+
+    color: #4a382b;
+}
+
+
+/* TABLET */
+
+@media (max-width: 1100px) {
+
+    .content {
+        flex-direction: column;
+    }
+
+    .memory-note {
+        width: 70%;
+        max-width: 500px;
+
+        text-align: center;
+    }
+
+    .gallery {
+        width: 100%;
+    }
+
+}
+
+
+/* PHONE */
+
+@media (max-width: 600px) {
+
+    .page {
+        width: 94%;
+        padding: 35px 10px 70px;
+    }
+
+    h1 {
+        font-size: 36px;
+        margin-bottom: 60px;
+    }
+
+    .memory-note {
+        width: 90%;
+        font-size: 17px;
+    }
+
+    .gallery {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 70px;
+    }
+
+    .memory {
+        width: min(280px, 85vw) !important;
+        margin: 0 !important;
+    }
+
+    footer {
+        margin-top: 80px;
+        font-size: 27px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="page">
+
+
+<h1>remembering bentley ♡</h1>
+
+
+<div class="content">
+
+
+<!-- YOUR PARAGRAPH -->
+
+<div class="memory-note">
+
+    bentley is the bestfriend and sweet soul dog to someone who means a lot to me and whom I hold very close to my heart. bentley sadly passed away on september 16th of 2026 but will forever live on in our memories and hearts :) 
+    
+
+</div>
+
+
+<div class="gallery">
+
+
+<!-- POLAROID 1 -->
+
+<div class="memory large one">
+
+    <div class="tape top"></div>
+
+    <div class="polaroid">
+
+        <div class="photo">
+            <img src="photos/bentley1.png" alt="Bentley">
+        </div>
+
+        <div class="caption">
+            freshly bathed bentley
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- POLAROID 2 -->
+
+<div class="memory small two">
+
+    <div class="tape corner"></div>
+
+    <div class="polaroid">
+
+        <div class="photo">
+            <img src="photos/bentley2.png" alt="Bentley">
+        </div>
+
+        <div class="caption">
+            sassy bentley
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- POLAROID 3 -->
+
+<div class="memory large three">
+
+    <div class="tape top"></div>
+
+    <div class="polaroid">
+
+        <div class="photo">
+            <img src="photos/bentley3.png" alt="Bentley">
+        </div>
+
+        <div class="caption">
+            sleepy bentley
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- POLAROID 4 -->
+
+<div class="memory small four">
+
+    <div class="tape corner"></div>
+
+    <div class="polaroid">
+
+        <div class="photo">
+            <img src="photos/bentley4.png" alt="Bentley">
+        </div>
+
+        <div class="caption">
+            snug bentley
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- POLAROID 5 -->
+
+<div class="memory large five">
+
+    <div class="tape top"></div>
+
+    <div class="polaroid">
+
+        <div class="photo">
+            <img src="photos/bentley5.png" alt="Bentley">
+        </div>
+
+        <div class="caption">
+            curious bentley
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- POLAROID 6 -->
+
+<div class="memory small six">
+
+    <div class="tape corner"></div>
+
+    <div class="polaroid">
+
+        <div class="photo">
+            <img src="photos/bentley6.png" alt="Bentley">
+        </div>
+
+        <div class="caption">
+            hungry bentley
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- POLAROID 7 -->
+
+<div class="memory large seven">
+
+    <div class="tape top"></div>
+
+    <div class="polaroid">
+
+        <div class="photo">
+            <img src="photos/bentley7.png" alt="Bentley">
+        </div>
+
+        <div class="caption">
+            silly bentley
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- POLAROID 8 -->
+
+<div class="memory small eight">
+
+    <div class="tape corner"></div>
+
+    <div class="polaroid">
+
+        <div class="photo">
+            <img src="photos/bentley8.png" alt="Bentley">
+        </div>
+
+        <div class="caption">
+            jester bentley
+        </div>
+
+    </div>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<footer>
+    we all miss you bentley!
+</footer>
+
+
+</div>
+
+
+</body>
+
+</html>
+```
